@@ -7,7 +7,7 @@ const hpp = require("hpp");
 const cors = require("cors");
 const compression = require("compression");
 
-const ShippingItem = require('./Routes/AdminRoutes/shipping_item_routes')
+// const ShippingItem = require('./Routes/AdminRoutes/shipping_item_routes')
 const AuthController = require("./Routes/auth_routes");
 const AdminStaff = require("./Routes/AdminRoutes/staff_routes");
 
@@ -66,7 +66,7 @@ const base = "/api/v1";
 
 app.use(`${base}/auth`, AuthController);
 app.use(`${base}/admin`, AdminStaff);
-app.use(`${base}/shipping-item`, ShippingItem);
+// app.use(`${base}/shipping-item`, ShippingItem);
 
 
 app.all("*", (req, res, next) => {
