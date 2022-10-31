@@ -43,8 +43,8 @@ const userSchema = new mongoose.Schema({
     },
     account_type: {
         type: String,
-        enum: ['admin', 'stock-manager', 'staff','supplier'],
-        default: 'staff'
+        enum: ['local_passenger', 'foreign_passenger'],
+        default: 'local_passenger'
     },
 });
 
