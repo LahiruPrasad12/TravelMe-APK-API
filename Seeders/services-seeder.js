@@ -50,20 +50,27 @@ const services = [
 
 const saveItem = async()=>{
     try{
+        await User.findOne({account_type: 'admin'})
         for (const x of services) {
+            console.log(x)
            await ServicesItem.create(x)
         }
     }catch (e){
 
     }
-    closeDatabase()
+    // closeDatabase()
 }
 
-const closeDatabase = () => {
+const saveData =async ()=>{
+    await saveItem();
+    await closeDatabase();
+}
+
+const closeDatabase = async() => {
     DB.disconnect().then(() => {
         console.log('database connection close')
     })
 }
 
-saveItem()
+saveData()
 

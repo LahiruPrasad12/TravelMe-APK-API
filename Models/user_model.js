@@ -29,18 +29,6 @@ const userSchema = new mongoose.Schema({
         minlength: 8,
         select: false
     },
-    gender: {
-        type: String,
-        enum: ['male', 'female'],
-    },
-    is_email_verified:{
-        type: Boolean,
-        default:false
-    },
-    is_phone_verified:{
-        type: Boolean,
-        default:false
-    },
     account_type: {
         type: String,
         enum: ['local_passenger', 'foreign_passenger'],

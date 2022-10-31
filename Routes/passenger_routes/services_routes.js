@@ -5,7 +5,7 @@ const router = express.Router();
 
 
 router.route("/")
-    .get(authController.protect,services.allServices)
+    .get(services.allServices)
     // .put(services.updateShippingItem)
     // .post(authController.protect,services.update_shipping_state)
 

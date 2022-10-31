@@ -7,7 +7,7 @@ const Filter = require('../../Utils/Filters')
 exports.allServices = catchAsync(async (req, res, next) => {
     let Respond = new Filter(Services.find(), req.query).filter().sort().limitFields().paginate();
     const Servicess = await Respond.query;
-    res.status(201).json({
+    res.status(200).json({
         status: "success",
         data: {
             Servicess,
