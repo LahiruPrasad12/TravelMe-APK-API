@@ -8,13 +8,13 @@ const crypto = require("crypto");
 
 
 exports.register = catchAsync(async (req, res, next) => {
-    req.body.password = Math.random().toString(16).substr(2, 8);
+    // req.body.password = Math.random().toString(16).substr(2, 8);
 
-    let URL = 'http://localhost:8081/#/';
+    // let URL = 'http://localhost:8081/#/';
 
-    const message = `<p>You have register to the system by system admin. Now you can log in to our system using this <b>(${req.body.password})</b> temporary
-    password. After first login attempt please make sure change your password and update your profile. 
-    Using below link you can log in.<div><a href= ${URL} >TravelMe</a></div></p>`;
+    // const message = `<p>You have register to the system by system admin. Now you can log in to our system using this <b>(${req.body.password})</b> temporary
+    // password. After first login attempt please make sure change your password and update your profile. 
+    // Using below link you can log in.<div><a href= ${URL} >TravelMe</a></div></p>`;
 
     const newUser = await User.create(req.body);
 
