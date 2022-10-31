@@ -17,9 +17,6 @@ const userSchema = new mongoose.Schema({
         lowercase: true,
         validate: [validator.isEmail, 'Please provide a valid email']
     },
-    DOB: {
-        type: Date,
-    },
     mobile: {
         type: Number,
     },
