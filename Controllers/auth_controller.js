@@ -37,6 +37,23 @@ exports.login = catchAsync(async (req, res, next) => {
 
 });
 
+//Login user
+exports.loginUser = catchAsync(async (req, res, next) => {
+    const { email, password } = req.body;
+    if (!email || !password) {
+        return next(new AppError("Please provide email and password!", 400));
+    }
+
+    //Check if user exists && password is correct
+    if(email === 'lahiru@gmail.com' && password === 'Lahiru12@') {
+        res.status(200).json({
+            status: "success"
+        });
+    }else {
+        return next(new AppError("Please provide valid email and password!", 401));
+    }
+});
+
 //get current user
 exports.currentUser = catchAsync(async (req, res, next) => {
     res.status(200).json({
