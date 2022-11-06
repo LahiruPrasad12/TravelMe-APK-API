@@ -10,6 +10,7 @@ const compression = require("compression");
 // const ShippingItem = require('./Routes/AdminRoutes/shipping_item_routes')
 const AuthRoutes = require("./Routes/auth_routes");
 const ServicesRoutes = require("./Routes/passenger_routes/services_routes");
+const Payment = require("./Routes/passenger_routes/payment_routes");
 
 const AppError = require("./Utils/AppError");
 
@@ -66,6 +67,7 @@ const base = "/api/v1";
 
 app.use(`${base}/auth`, AuthRoutes);
 app.use(`${base}/services`, ServicesRoutes);
+app.use(`${base}/payments`, Payment);
 // app.use(`${base}/shipping-item`, ShippingItem);
 
 
